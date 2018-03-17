@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+				margin: 0;
+			}
+            a {
+				text-decoration: none;
+			}
+			.nav-bar {
+				width: 100%;
+				list-style-type: none;
+                color: #e9b78b;
+                background-color: #c44d34;
+                margin: 0;
+				font-family: Helvetica;
+				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			}
+            .nav-bar li {
+                display: block;
+                padding: 20px;
+            }
+			.nav-bar>li {
+				display:inline-block;
+				width: 130px;
+			}
+			.nav-bar li:hover {
+				background-color: #974739;
+			}
+			.nav-bar ul {
+				display: none;
+                position: absolute;
+                width: 150px;
+				background-color: #EFE4D9;
+				border: 5px solid #29202a;
+                margin-top: 20px;
+                padding: 0;
+				text-decoration-color: #632F2F
+			}
+			.nav-bar li:hover ul {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="nav-bar">
+			<li>
+				Option 1
+				<ul>
+					<li><a href=""> SubOption1a</a></li>
+					<li><a href=""> SubOption2a</a></li>
+					<li><a href=""> SubOption3a</a></li>
+
+					<!--Add link in quotes-->
+
+				</ul>
+			</li>
+			<li>
+				Option 2
+				<ul>
+					<li><a href=""> SubOption1b</a></li>
+					<li><a href=""> SubOption2b</a></li>
+				</ul>
+			</li>
+			<li>
+				Option 3
+				<ul>
+					<li><a href=""> SubOption1c</a></li>
+					<li><a href=""> SubOption2c</a></li>
+					<li><a href=""> SubOption3c</a></li>
+					<li><a href=""> SubOption4c</a></li>
+				</ul>
+			</li>
+			<li>
+				Option 4
+				<ul>
+					<li><a href=""> SubOption1d</a></li>
+					<li><a href=""> SubOption2d</a></li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>
