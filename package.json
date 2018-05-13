@@ -1,15 +1,16 @@
 {
-  "name": "exercise-tracker",
+  "name": "exercise-app",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
+    "build-dev": "ng build --watch",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "server": "nodemon server server/index.js"
+    "server": "nodemon --watch server server/index.js"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +23,8 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "express": "^4.16.2",
@@ -32,7 +35,7 @@
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@angular/cli": "~1.7.2",
+    "@angular/cli": "~1.7.3",
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
     "@types/jasmine": "~2.8.3",
@@ -47,7 +50,7 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "nodemon": "^1.17.4",
+    "nodemon": "^1.15.1",
     "protractor": "~5.1.2",
     "ts-node": "~4.1.0",
     "typescript": "~2.5.3"

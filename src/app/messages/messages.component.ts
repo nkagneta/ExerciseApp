@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessagesService } from '../services/messages.service';
 
 @Component({
   selector: 'app-messages',
@@ -6,14 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent implements OnInit {
-
-  Messages: string[];
   
-  constructor() { 
+  constructor( public Messages: MessagesService ) { 
+  }
   
-    this.Messages = ['Welcome to the Exercise Tracker!'];
-}
   ngOnInit() {
   }
 
+  delete(i: number){
+    this.Messages.Messages.splice(i, 1);
+  }
 }
