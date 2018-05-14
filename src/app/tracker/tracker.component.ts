@@ -4,6 +4,11 @@ import { Tracker, User, Exercise } from '../models/tracker';
 import { MessagesService } from '../services/messages.service';
 import { TrackerService } from '../services/tracker.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/debounceTime";
+import "rxjs/add/operator/distinctUntilChanged";
+import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-tracker',
@@ -71,4 +76,18 @@ export class TrackerComponent implements OnInit {
  // delete(i: number){                                  Tried to implement a delete function to remove exercises after they are selected
  //   this.Model.PlayedExercises.splice(i, 1);
  // }
+
+//const usernames = [];
+
+   
+ //search = (text: Observable<string>) => {
+   //  text.pipe(
+     //    debounceTime(100),
+       //  distinctUntilChanged(),
+         //map(x=> [x, "Hello", "World"] 
+         //   : usernames.filter(v => v.toLowerCase().indexOf(x.toLowerCase()) > -1).slice(0, 10))
+         //   : User.Name.filter(v => v.toLowerCase().indexOf(x.toLowerCase()) > -1).slice(0, 10))
+     //Users has a feild called Name which is a string
+    //));
+// }
 }

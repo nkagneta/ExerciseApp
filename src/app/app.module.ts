@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -11,7 +10,8 @@ import { TrackerComponent } from './tracker/tracker.component';
 import { MessagesService } from './services/messages.service';
 import { TrackerService } from './services/tracker.service';
 import { LoginComponent } from './login/login.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,8 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     HttpModule,
+    NgbModule.forRoot(),
+    FormsModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'tracker', component: TrackerComponent },

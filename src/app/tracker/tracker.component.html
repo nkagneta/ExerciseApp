@@ -10,7 +10,6 @@
                         0 lbs
                         <span style="float:right;">400 lbs</span>
                         </p>
-              
     </div>
 </div>
 
@@ -18,6 +17,7 @@
   <div class="col-md-4">
       <div class="card" >
           <div class="card-header">My Exercises ({{Me.Name}}) </div>
+
           <ul class="list-group list-group-flush my-exercises">
               <li *ngFor="let exercise of Me.MyExercises" 
                   (click)="submitExercise($event, exercise)"
@@ -39,5 +39,22 @@
                   </li>
               </ul>
           </div>
-  </div>
+        </div>
+    <div class="col-md-4">
+          <div class="card" >
+                <div class="card-header">Other Users online:</div>
+                <!--<li *ngFor="let player of Model.Players component.usernames" class="list-group-item">     Tried to use a loop to add names to search
+                <label for="typeahead-basic">Search for a user:</label>
+                <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search"/>
+                <hr>
+                <pre> {{ player.Name }}</pre>
+                </li>-->
+                <ul class="list-group list-group-flush">
+                    <li *ngFor="let player of Model.Players" class="list-group-item">
+                        <img style="height: 16px; width: 16px" class="rounded">
+                        {{player.Name}}
+                    </li>
+                </ul>
+            </div>
+        </div>
 </div>
