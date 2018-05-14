@@ -61,10 +61,14 @@ export class TrackerComponent implements OnInit {
   }
 
   join(name: string){
-    this._Messages.Messages.push({ Text: 'You\'ve opened the tracker! Welcome ' + name + '.', Type: 'success'})
+    this._Messages.Messages.push({ Text: 'You\'ve logged in to the tracker! Welcome ' + name + '.', Type: 'info'})
     this.http.get(this._api + "/exercises", { params : { playerId: name } })
     .subscribe(data=> this.Me.MyExercises = data.json() )
   }
 
   MyPlayedExercise = () => this.Model.PlayedExercises.find( x => x.PlayerId == this.Me.Name );
+
+ // delete(i: number){                                  Tried to implement a delete function to remove exercises after they are selected
+ //   this.Model.PlayedExercises.splice(i, 1);
+ // }
 }

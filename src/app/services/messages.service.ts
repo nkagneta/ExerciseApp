@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class MessagesService {
 
-  Messages: { Text: string, Type: 'success' | 'danger' } [];
+  Messages: { Text: string, Type: any } [];
 
   constructor() { 
     this.Messages = [

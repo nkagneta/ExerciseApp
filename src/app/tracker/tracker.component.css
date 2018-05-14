@@ -1,7 +1,7 @@
-.my-quotes .enabled {
+.my-exercises {
     cursor: pointer;
 }
 
-.my-quotes .enabled:hover{
-    background-color: #DDEEFF;
+.my-exercises :hover{
+    background-color: #d3beff;
 }
