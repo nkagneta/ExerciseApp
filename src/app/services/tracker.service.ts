@@ -18,13 +18,13 @@ export class TrackerService {
   login(name: string, password: string){
       if(password == '123'){
           // User logs in
-          this.Me = { Name: name, MyQuotes: [] };
+          this.Me = { Name: name, MyExercises: [] };
           this._Router.navigate(['/tracker']);
       }
   }
 
   oAuthLogin(name: string, token:string, pic: string){
-    this.Me = { Name: name, MyQuotes: [] };
+    this.Me = { Name: name, MyExercises: [] };
     this.pic = pic;
     this.token = token;
     this._Router.navigate(['/tracker']);

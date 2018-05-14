@@ -4,16 +4,15 @@ export class Tracker {
     Picture: {
         url: string
     };
-    PlayedQuotes: Quote[] = [];
+    PlayedExercises: Exercise[] = [];
 }
 
 export class User {
     Name: string;
-    MyQuotes: string[];
+    MyExercises: string[];
 }
 
-export class Quote {
+export class Exercise {
     Text: string;
     PlayerId: string;
-    Chosen: boolean = false;
 }

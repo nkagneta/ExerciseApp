@@ -7,26 +7,21 @@ var app = express.Router();
 var tracker = new Tracker();
 
 module.exports = app
-    .get('/quotes', (req, res) =>
-     res.send( tracker.GetQuotes(req.query.playerId) ) 
+    .get('/exercises', (req, res) =>
+     res.send( tracker.GetExercises(req.query.playerId) ) 
     )
     .get('/state', (req, res) => res.send(tracker))
-    .post('/picture', (req, res) => res.send( tracker.FlipPicture() ))
-    .post('/quotes', (req, res) => {
+    .post('/exercises', (req, res) => {
         console.log(req.body);
         
         try {
-            tracker.SubmitQuote(req.body.Text, req.body.PlayerId);
+            tracker.SubmitExercise(req.body.Text, req.body.PlayerId);
             res.send( { success: true } );            
         } catch (error) {
             res.status(403).send({ success: false, message: error.message });
         }
     })
-    .post('/quotes/choose', (req, res) => {
-        if(req.body.PlayerId != tracker.DealerId){
-            res.status(403).send({ success: false, message: "Only the dealer can choose a quote" });
-        }else{
-            tracker.ChooseQuote(req.body.Text);
+    .post('/exercises/choose', (req, res) => {
+            tracker.ChooseExercise(req.body.Text);
             res.send( { success: true } );
-        }
     })

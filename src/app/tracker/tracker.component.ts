@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from "@angular/http";
-import { Tracker, User, Quote } from '../models/tracker';
+import { Tracker, User, Exercise } from '../models/tracker';
 import { MessagesService } from '../services/messages.service';
 import { TrackerService } from '../services/tracker.service';
 import { Router } from '@angular/router';
@@ -40,22 +40,20 @@ export class TrackerComponent implements OnInit {
         .subscribe(data=> this.Model = data.json())
   }
 
-  submitQuote(e: MouseEvent, text: string){
+  submitExercise(e: MouseEvent, text: string){
     e.preventDefault();
 
-    if(this.MyPlayedQuote()) return;
-
     this._Messages.Messages.push({ Text: 'Exercise Added: ' + text, Type: 'success'})
-    this.http.post(this._api + "/quotes", { Text: text, PlayerId: this.Me.Name })
+    this.http.post(this._api + "/exercises", { Text: text, PlayerId: this.Me.Name })
         .subscribe(data=> {
         }, err=> {
             console.log(err);
         });
   }
 
-  chooseQuote(e: MouseEvent, quote: Quote){
+  chooseExercise(e: MouseEvent, exercise: Exercise){
     e.preventDefault();
-    this.http.post(this._api + "/quotes/choose", { Text: quote.Text, PlayerId: this.Me.Name })
+    this.http.post(this._api + "/exercises/choose", { Text: exercise.Text, PlayerId: this.Me.Name })
         .subscribe(data=> {
         }, err=> {
             console.log(err);
@@ -64,11 +62,9 @@ export class TrackerComponent implements OnInit {
 
   join(name: string){
     this._Messages.Messages.push({ Text: 'You\'ve opened the tracker! Welcome ' + name + '.', Type: 'success'})
-    this.http.get(this._api + "/quotes", { params : { playerId: name } })
-    .subscribe(data=> this.Me.MyQuotes = data.json() )
+    this.http.get(this._api + "/exercises", { params : { playerId: name } })
+    .subscribe(data=> this.Me.MyExercises = data.json() )
   }
 
-  MyPlayedQuote = () => this.Model.PlayedQuotes.find( x => x.PlayerId == this.Me.Name );
-  ChosenQuote = () => this.Model.PlayedQuotes.find( x => x.Chosen );
-  IsEveryoneDone = () => this.Model.PlayedQuotes.length == this.Model.Players.length - 1;
+  MyPlayedExercise = () => this.Model.PlayedExercises.find( x => x.PlayerId == this.Me.Name );
 }
