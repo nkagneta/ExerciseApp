@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   constructor(private _Tracker: TrackerService) {
     window.fbAsyncInit = () => {
       FB.init({
-          appId      : '191800854777220',
+          appId      : '1640183972760872',
           cookie     : true,
           xfbml      : true,
           version    : 'v2.12'

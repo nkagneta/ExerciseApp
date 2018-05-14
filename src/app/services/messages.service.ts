@@ -7,7 +7,7 @@ export class MessagesService {
 
   constructor() { 
     this.Messages = [
-      { Text: 'Welcome to the Exercise Tracker!', Type: 'success' },
+      { Text: 'Welcome to the Exercise Tracker! Unfortunately the Facebook login integration is currently down. Please use Google login.', Type: 'warning' },
     ];
   }
 }

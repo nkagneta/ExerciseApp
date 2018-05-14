@@ -15,7 +15,7 @@ export class TrackerComponent implements OnInit {
     Model = new Tracker();
     Me: User;
 
-    private _api = "http://localhost:8080/tracker"; //works for dev server, change to "/tracker" for cloud hosting?
+    private _api = "http://localhost:8080/tracker"; //works for dev server, change to "/tracker" for cloud hosting
 
   constructor(
       private http: Http,

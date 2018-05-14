@@ -13,7 +13,6 @@ import { TrackerService } from './services/tracker.service';
 import { LoginComponent } from './login/login.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
